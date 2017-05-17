@@ -1,0 +1,123 @@
+.box {
+    width: 250px;
+    display: block;
+    float: left}
+table.division {
+    background: #FFFFFF;
+    border: 1px solid #ccc;
+    line-height: 150%;
+    margin: 10px;
+    padding: 5px;
+    white-space: normal;
+	border-collapse:collapse;
+	table-layout: fixed;
+}
+table.division thead {border:1px solid #ccc;background: #DBE2E7;}
+.orderdetails_basic th {
+    color: #336699;
+    text-align: left;
+    white-space: nowrap;
+}
+
+table.division th {
+    background: #E2E8EB;
+    border-right: 1px solid #ccc;
+    font-size: 14px;
+    text-align: right;
+    white-space: nowrap;
+    width: 140px;
+}
+
+table.division th, table.division td {
+    border-color: #fff #DBE2E7 #ddd #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #DBE2E7;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.tableform {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border-color: #ddd #BEC6CE #BEC6CE #ddd;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    padding: 5px;
+}
+
+h5 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    color: #111111;
+    margin: 0.5em 0;
+}
+
+#order_dialog .con {
+    background: none repeat scroll 0 0 #FFFFFF;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 400px;
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+}
+
+.allo_box {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #CCCCCC;
+    position: absolute;
+    width: 300px;
+    display: none;
+}
+
+.allo_box li {
+    line-height: 30px;
+    border-bottom: 1px solid #ccc
+}
+
+.allo_items li.selected {
+    background-color: #00EE76
+};
+
+.close_box a {
+    float: right
+}
+
+#tabcontainer .l-tab-links ul {
+    margin-left: 160px;
+}
+
+#tabcontainer {
+    padding-top: 20px;
+}
+
+.l-tab-links {
+    background: none;
+}
+
+.l-tab-links li {
+    margin: 0 0 0 12px;
+}
+
+.input .table td {
+    color: #666666;
+    line-height: 25px;
+}
+
+.modifyState {
+	font-size: 16px; 
+	color: rgb(255, 153, 0); 
+	font-weight: 700;
+}
+
+.modifyBtn {
+	font-size:12px;
+	font-weight: 700;
+	display:none;
+}

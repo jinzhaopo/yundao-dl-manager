@@ -1,0 +1,64 @@
+.messageBox {
+	width: 400px;
+	margin: 100px auto;
+}
+
+.messageBox .boxTop {
+	width: 400px;
+	height: 29px;
+	clear: both;
+	background: url(../img/message_bg.gif) no-repeat 0px -60px;
+}
+
+.messageBox .boxMiddle {
+	width: 400px;
+	clear: both;
+	padding: 30px 0px;
+	text-align: center;
+	background: url(../img/message_y_bg.gif) repeat-y -400px 0px;
+}
+
+.messageBox .boxBottom {
+	width: 400px;
+	height: 5px;
+	clear: both;
+	overflow: hidden;
+	background: url(../img/message_bg.gif) no-repeat 0px -90px;
+}
+
+.messageBox .boxTitle {
+	height: 29px;
+	line-height: 29px;
+	float: left;
+	margin-left: 8px;
+	font-weight: bold;
+}
+
+.messageBox .messageContent {
+	clear: both;
+	line-height: 12px;
+	padding: 0px 20px;
+	margin-bottom: 40px;
+}
+
+.messageBox .messageContent .icon {
+	width: 29px;
+	height: 29px;
+	line-height: 29px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+}
+
+.messageWindow .messageContent .warn {
+	background: url(../img/message_bg.gif) no-repeat -60px -120px;
+}
+
+.messageWindow .messageContent .success {
+	background: url(../img/message_bg.gif) no-repeat -90px -120px;
+}
+
+.messageWindow .messageContent .error {
+	background: url(../img/message_bg.gif) no-repeat -120px -120px;
+}

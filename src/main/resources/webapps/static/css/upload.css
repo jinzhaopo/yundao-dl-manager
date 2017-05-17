@@ -1,0 +1,169 @@
+div.xxDialog {
+    background: url("../images/common.gif") repeat-x scroll 0 -660px #FFFFFF;
+    border: 1px solid #779CB0;
+    box-shadow: 1px 1px 6px #999999;
+    display: none;
+    left: 50%;
+    overflow: hidden;
+    position: fixed;
+    top: 25%;
+    z-index: 100;
+}
+div.xxDialog .dialogTitle {
+    background: url("../images/common.gif") repeat-x scroll 0 -210px transparent;
+    color: #666666;
+    cursor: move;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+}
+div.xxDialog .dialogClose {
+    background: url("../images/common.gif") no-repeat scroll 0 -330px transparent;
+    cursor: pointer;
+    height: 19px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 25px;
+}
+div.xxDialog .dialogClose:hover {
+    background-position: -30px -330px;
+}
+div.xxDialog .dialogwarnIcon {
+    background: url("../images/common.gif") no-repeat scroll -60px -360px transparent;
+    line-height: 24px;
+    margin: 50px 0 40px 60px;
+    padding-left: 30px;
+}
+div.xxDialog .dialogsuccessIcon {
+    background: url("../images/common.gif") no-repeat scroll -30px -390px transparent;
+    line-height: 24px;
+    margin: 50px 0 40px 60px;
+    padding-left: 30px;
+}
+div.xxDialog .dialogerrorIcon {
+    background: url("../images/common.gif") no-repeat scroll 0 -420px transparent;
+    line-height: 24px;
+    margin: 50px 0 40px 60px;
+    padding-left: 30px;
+}
+div.xxDialog .dialogBottom {
+    background: url("../images/common.gif") repeat-x scroll 0 -270px #FFFFFF;
+    height: 34px;
+    padding-top: 6px;
+    text-align: center;
+}
+div.xxDialog .dialogIframe {
+    height: 2000px;
+    left: -100px;
+    position: absolute;
+    top: -100px;
+    width: 2000px;
+    z-index: -1;
+}
+div.xxMessage {
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+    box-shadow: 1px 1px 6px #999999;
+    display: none;
+    left: 50%;
+    overflow: hidden;
+    padding: 10px 30px;
+    position: fixed;
+    top: 25%;
+    z-index: 100;
+}
+div.xxMessage .messageContent {
+    color: #666666;
+    line-height: 24px;
+    padding: 0 10px 0 30px;
+}
+div.xxMessage .messagewarnIcon {
+    background: url("../images/common.gif") no-repeat scroll -60px -360px transparent;
+}
+div.xxMessage .messagesuccessIcon {
+    background: url("../images/common.gif") no-repeat scroll -30px -390px transparent;
+}
+div.xxMessage .messageerrorIcon {
+    background: url("../images/common.gif") no-repeat scroll 0 -420px transparent;
+}
+div.xxMessage .messageIframe {
+    height: 2000px;
+    left: -100px;
+    position: absolute;
+    top: -100px;
+    width: 2000px;
+    z-index: -1;
+}
+div.xxBrowser {
+    padding: 6px;
+}
+div.xxBrowser .browserBar {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 4px;
+}
+div.xxBrowser .browserUploadButton {
+    overflow: hidden;
+    position: relative;
+}
+div.xxBrowser .browserUploadButton input {
+    border: medium none;
+    cursor: pointer;
+    height: 25px;
+    opacity: 0;
+    outline: medium none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+div.xxBrowser .browserOrderType {
+    margin-right: 6px;
+}
+div.xxBrowser .browserList {
+    border: 1px solid #DDDDDD;
+    height: 260px;
+    overflow-y: scroll;
+}
+div.xxBrowser .browserItem {
+    float: left;
+    height: 120px;
+    margin: 4px;
+    width: 100px;
+}
+div.xxBrowser .browserItem img {
+    border: 1px solid #DDDDDD;
+    clear: both;
+    cursor: pointer;
+    height: 90px;
+    padding: 4px;
+    width: 90px;
+}
+div.xxBrowser .browserItem img:hover {
+    background-color: #E9EFF6;
+    border: 1px solid #5690D2;
+}
+div.xxBrowser .browserItem div {
+    clear: both;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-align: center;
+    width: 100px;
+}
+div.xxBrowser a.button {
+    background: url("../images/common.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #B7C8D9;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    color: #444444;
+    display: -moz-inline-stack;
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 10px;
+    outline: medium none;
+    padding: 0 16px;
+    text-shadow: 1px 1px #FFFFFF;
+}

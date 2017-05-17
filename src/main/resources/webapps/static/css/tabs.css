@@ -1,0 +1,25 @@
+ul.tab {
+    background: url("../images/admin_x_bg.gif") repeat-x 0 -120px;
+	height: 30px;
+    margin: 10px 0 5px;
+    padding-left: 160px;
+}
+ul.tab li input {
+    background: url("../images/admin_button.gif") no-repeat -120px -30px;
+    border: medium none;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    outline: medium none;
+    text-align: center;
+    width: 100px;
+}
+ul.tab li input.current {
+    background: url("../images/admin_button.gif") no-repeat 0 -30px;
+	font-weight: bold;
+}
+ul.tab li {
+    float: left;
+    margin-right: 5px;
+}

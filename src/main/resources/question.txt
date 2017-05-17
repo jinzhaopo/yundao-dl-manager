@@ -1,3 +1,5 @@
 1.springBoot默认加载application.properties.
 2.@ComponentScan作用是将xxx范围想的包扫入springboot中
 3.@MapperScan作用是不进行扫包
+4.springboot中有默认的事物  	@Transactional标签可以进行事物的回滚等操作
+5.@ConfigurationProperties 1.5版本以上去掉了locations

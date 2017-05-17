@@ -1,0 +1,159 @@
+.product .productImageArea {
+    height: 180px;
+}
+.product .productImageArea .example {
+    background: url("../images/admin_bg.gif") no-repeat scroll -60px -60px transparent;
+    float: left;
+    height: 130px;
+    margin-right: 10px;
+    width: 130px;
+}
+.product .productImageArea .prev {
+    background: url("../images/admin_bg.gif") no-repeat scroll 0 -60px #FAFAFA;
+    border: 1px solid #EDEDED;
+    display: block;
+    float: left;
+    height: 130px;
+    margin-right: 5px;
+    outline: medium none;
+    width: 8px;
+}
+.product .productImageArea .prev:hover {
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+}
+.product .productImageArea .next {
+    background: url("../images/admin_bg.gif") no-repeat scroll -30px -60px #FAFAFA;
+    border: 1px solid #EDEDED;
+    display: block;
+    float: left;
+    height: 130px;
+    margin-left: 5px;
+    outline: medium none;
+    width: 8px;
+}
+.product .productImageArea .next:hover {
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+}
+.product .productImageArea .scrollable {
+    border: 1px solid #CCCCCC;
+    float: left;
+    height: 130px;
+    line-height: 130px;
+    overflow: hidden;
+    position: relative;
+    width: 502px;
+}
+.product .productImageArea .items {
+    position: absolute;
+    width: 20000em;
+}
+.product .productImageArea li {
+    display: block;
+    float: left;
+    height: 90px;
+    margin: 5px;
+    text-align: center;
+    width: 90px;
+}
+.product .productImageArea .productImageBox {
+    position: relative;
+}
+.product .productImageArea .productImageBox .productImagePreview {
+    border: 1px solid #CFCFCF;
+    color: #969696;
+    height: 90px;
+    left: 0;
+    line-height: 90px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+	text-align:center;
+    width: 90px;
+    z-index: 0;
+}
+.product .productImageArea .productImageBox .productImagePreview:hover {
+    border: 1px solid #FFC097;
+}
+.product .productImageArea .productImageBox .productImagePreview img {
+    height: 90px;
+    width: 90px;
+}
+.product .productImageArea .productImageBox .productImageOperate {
+    background: url("../images/goods_image_operate_bg.png") no-repeat scroll 0 0 transparent;
+    display: none;
+    height: 25px;
+    left: 1px;
+    padding-left: 13px;
+    padding-top: 3px;
+    position: absolute;
+    top: 66px;
+    width: 90px;
+    z-index: 1;
+}
+.product .productImageArea .productImageBox .productImageOperate .left {
+    display: block;
+    float: left;
+    height: 19px;
+    margin-right: 1px;
+    outline: medium none;
+    overflow: hidden;
+    width: 19px;
+}
+.product .productImageArea .productImageBox .productImageOperate .right {
+    display: block;
+    float: left;
+    height: 19px;
+    margin-right: 1px;
+    outline: medium none;
+    overflow: hidden;
+    width: 19px;
+}
+.product .productImageArea .productImageBox .productImageOperate .delete {
+    display: block;
+    float: left;
+    height: 19px;
+    outline: medium none;
+    overflow: hidden;
+    width: 19px;
+}
+.product .productImageArea .productImageBox .productImageUploadButton {
+    background: url("../images/admin_button.gif") no-repeat scroll 0 -90px transparent;
+    border: medium none;
+    cursor: pointer;
+    display: block;
+    height: 22px;
+    left: 0;
+    line-height: 22px;
+    outline: medium none;
+    overflow: hidden;
+    position: relative;
+    top: 97px;
+    width: 74px;
+}
+.product .productImageArea .productImageBox .productImageUploadButton input {
+    width: 74px;
+	height: 22px;
+	line-height: 22px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	font-size: 40px;
+	direction: rtl;
+	cursor: pointer;
+}
+.product .productImageArea .productImageBox .productImageUploadButton div {
+    cursor: pointer;
+    height: 22px;
+    left: 0;
+    line-height: 22px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 74px;
+    z-index: 0;
+}
