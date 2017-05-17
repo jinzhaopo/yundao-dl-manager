@@ -1,4 +1,4 @@
-package framework.dataSource;
+package framework.config.dataSource;
 
 import java.sql.SQLException;
 

@@ -49,16 +49,17 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 
 	/**
 	 * 获取下一条记录ID
+	 * 
 	 * @return
 	 */
-	public Long getNextId(){	
+	public Long getNextId() {
 		return mapper.selectNextId();
 	}
-	
+
 	/*
 	 * 根据id查询数据(non-Javadoc)
 	 * 
-	 * @see com.yundao.common.service.BaseService#queryById(java.lang.Long)
+	 * @see com.gaiya.ceo.common.service.BaseService#queryById(java.lang.Long)
 	 */
 	public T queryById(Long id) {
 		return this.mapper.selectByPrimaryKey(id);
@@ -86,7 +87,7 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	/*
 	 * 查询所有数据(non-Javadoc)
 	 * 
-	 * @see com.yundao.common.service.BaseService#queryAll()
+	 * @see com.gaiya.ceo.common.service.BaseService#queryAll()
 	 */
 	public List<T> queryAll() {
 		return this.mapper.select(null);
@@ -96,8 +97,8 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	 * 根据条件查询一条数据，如果有多条数据会抛出异常(non-Javadoc)
 	 * 
 	 * @see
-	 * com.yundao.common.service.BaseService#queryOne(com.yundao.common.pojo.
-	 * BaseEntity)
+	 * com.gaiya.ceo.common.service.BaseService#queryOne(com.gaiya.ceo.common.
+	 * pojo. BaseEntity)
 	 */
 	public T queryOne(T record) {
 		return this.mapper.selectOne(record);
@@ -107,8 +108,8 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	 * 根据条件查询数据列表(non-Javadoc)
 	 * 
 	 * @see
-	 * com.yundao.common.service.BaseService#queryListByWhere(com.yundao.common.
-	 * pojo.BaseEntity)
+	 * com.gaiya.ceo.common.service.BaseService#queryListByWhere(com.gaiya.ceo.
+	 * common. pojo.BaseEntity)
 	 */
 	public List<T> queryListByWhere(T record) {
 		return this.mapper.select(record);
@@ -118,8 +119,8 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	 * 分页查询(non-Javadoc)
 	 * 
 	 * @see
-	 * com.yundao.common.service.BaseService#queryPageListByWhere(java.lang.
-	 * Integer, java.lang.Integer, com.yundao.common.pojo.BaseEntity)
+	 * com.gaiya.ceo.common.service.BaseService#queryPageListByWhere(java.lang.
+	 * Integer, java.lang.Integer, com.gaiya.ceo.common.pojo.BaseEntity)
 	 */
 	public PageInfo<T> queryPageListByWhere(Integer page, Integer rows, T record) {
 		// 设置分页条件
@@ -131,7 +132,8 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	/*
 	 * 新增数据，返回成功的条数(non-Javadoc)
 	 * 
-	 * @see com.yundao.common.service.BaseService#save(com.yundao.common.pojo.
+	 * @see
+	 * com.gaiya.ceo.common.service.BaseService#save(com.gaiya.ceo.common.pojo.
 	 * BaseEntity)
 	 */
 	public Integer save(T record) {
@@ -141,15 +143,31 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 		return this.mapper.insert(record);
 	}
 
+	/**
+	 * 
+	 * @Title: save
+	 * @Description: 新增
+	 * @param records
+	 * @return
+	 * @see framework.service.BaseService#save(java.util.List)
+	 */
+	public Integer save(List<T> records) {
+		for (T t : records) {
+			t.setCreateDate(new Date());
+			t.setModifyDate(t.getCreateDate());
+		}
+		return this.mapper.insertList(records);
+	}
+
 	/*
 	 * 新增数据，使用不为null的字段，返回成功的条数(non-Javadoc)
 	 * 
 	 * @see
-	 * com.yundao.common.service.BaseService#saveSelective(com.yundao.common.
-	 * pojo.BaseEntity)
+	 * com.gaiya.ceo.common.service.BaseService#saveSelective(com.gaiya.ceo.
+	 * common. pojo.BaseEntity)
 	 */
 	public Integer saveSelective(T record) {
-		//record.setId(this.mapper.selectNextId());
+		// record.setId(this.mapper.selectNextId());
 		record.setCreateDate(new Date());
 		record.setModifyDate(record.getCreateDate());
 		return this.mapper.insertSelective(record);
@@ -158,8 +176,9 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	/*
 	 * 修改数据，返回成功的条数(non-Javadoc)
 	 * 
-	 * @see com.yundao.common.service.BaseService#update(com.yundao.common.pojo.
-	 * BaseEntity)
+	 * @see
+	 * com.gaiya.ceo.common.service.BaseService#update(com.gaiya.ceo.common.
+	 * pojo. BaseEntity)
 	 */
 	public Integer update(T record) {
 		record.setModifyDate(new Date());
@@ -170,8 +189,8 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	 * 修改数据，使用不为null的字段，返回成功的条数(non-Javadoc)
 	 * 
 	 * @see
-	 * com.yundao.common.service.BaseService#updateSelective(com.yundao.common.
-	 * pojo.BaseEntity)
+	 * com.gaiya.ceo.common.service.BaseService#updateSelective(com.gaiya.ceo.
+	 * common. pojo.BaseEntity)
 	 */
 	public Integer updateSelective(T record) {
 		record.setModifyDate(new Date());
@@ -181,7 +200,7 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	/*
 	 * 工具id删除(non-Javadoc)
 	 * 
-	 * @see com.yundao.common.service.BaseService#deleteById(java.lang.Long)
+	 * @see com.gaiya.ceo.common.service.BaseService#deleteById(java.lang.Long)
 	 */
 	public Integer deleteById(Long id) {
 		return this.mapper.deleteByPrimaryKey(id);
@@ -190,7 +209,8 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	/*
 	 * 批量删除(non-Javadoc)
 	 * 
-	 * @see com.yundao.common.service.BaseService#deleteByIds(java.lang.Class,
+	 * @see
+	 * com.gaiya.ceo.common.service.BaseService#deleteByIds(java.lang.Class,
 	 * java.lang.String, java.util.List)
 	 */
 	public Integer deleteByIds(Class<T> clazz, String property, List<Object> values) {
@@ -199,12 +219,56 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 		return this.mapper.deleteByExample(example);
 	}
 
+	/**
+	 * 
+	 * @Title: delete
+	 * @Description: 删除
+	 * @param property
+	 * @param value
+	 * @return
+	 * @see framework.service.BaseService#delete(java.lang.String,
+	 *      java.lang.Object)
+	 */
+	public Integer delete(String property, Object value) {
+		Example example = new Example(getClass());
+		example.createCriteria().andEqualTo(property, value);
+		return this.mapper.deleteByExample(example);
+	}
+
+	/**
+	 * 
+	 * @Title: delete
+	 * @Description: 删除
+	 * @param searchFilters
+	 * @return
+	 * @see framework.service.BaseService#delete(framework.page.SearchFilter[])
+	 */
+	public Integer delete(SearchFilter... searchFilters) {
+		List<SearchFilter> sfList = new ArrayList<SearchFilter>();
+		Collections.addAll(sfList, searchFilters);
+		Example example = setExample(sfList, getTClass());
+		return this.mapper.deleteByExample(example);
+	}
+
+	/**
+	 * 
+	 * @Title: delete
+	 * @Description: 删除
+	 * @param searchFilters
+	 * @return
+	 * @see framework.service.BaseService#delete(java.util.List)
+	 */
+	public Integer delete(List<SearchFilter> searchFilters) {
+		Example example = setExample(searchFilters, getTClass());
+		return this.mapper.deleteByExample(example);
+	}
+
 	/*
 	 * 根据条件做删除(non-Javadoc)
 	 * 
 	 * @see
-	 * com.yundao.common.service.BaseService#deleteByWhere(com.yundao.common.
-	 * pojo.BaseEntity)
+	 * com.gaiya.ceo.common.service.BaseService#deleteByWhere(com.gaiya.ceo.
+	 * common. pojo.BaseEntity)
 	 */
 	public Integer deleteByWhere(T record) {
 		return this.mapper.delete(record);
@@ -213,25 +277,13 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * com.yundao.common.service.BaseService#selectByExample(java.lang.Object)
+	 * @see com.gaiya.ceo.common.service.BaseService#selectByExample(java.lang.
+	 * Object)
 	 */
 	public List<T> selectByExample(Object example) {
 		return mapper.selectByExample(example);
 	}
-	/**
-	 * 
-	 * @Title: getList
-	 * @Description:获取列表
-	 * @return
-	 * @return: List<T>
-	 */
-	public List<T> getList(SearchFilter... searchFilters){
-		List<SearchFilter> list = new ArrayList<SearchFilter>();
-		Collections.addAll(list, searchFilters);
-		return getList(searchFilters);
-	}
-	
+
 	/**
 	 * 
 	 * @Title: getList
@@ -241,56 +293,11 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	 * @see framework.service.BaseService#getList(framework.page.SearchFilter)
 	 */
 	public List<T> getList(List<SearchFilter> searchFilters) {
+		// 设置example
 		Class _class = getTClass();
-		Example example = new Example(_class);
-		Criteria createCriteria = example.createCriteria();
-		for (SearchFilter searchFilter : searchFilters) {
-			String property = searchFilter.getFieldName();
-			Object value = searchFilter.getValue();
-			Operator operator = searchFilter.getOperator();
-			Boolean ignoreCase = searchFilter.getIgnoreCase();
-			List values = searchFilter.getValues();
-			switch (operator.ordinal()) {
-			case 0:// EQ
-				createCriteria.andEqualTo(property, value);
-				break;
-			case 1:// LIKE
-				createCriteria.andLike(property, (String) value);
-				break;
-			case 2:// GT>
-				createCriteria.andGreaterThan(property, value);
-				break;
-			case 3:// LT("<")
-				createCriteria.andLessThan(property, value);
-				break;
-			case 4:// NE("<>")
-				createCriteria.andNotEqualTo(property, value);
-				break;
-			case 5:// GE(">=")
-				createCriteria.andGreaterThanOrEqualTo(property, value);
-				break;
-			case 6:// LE("<=")
-				createCriteria.andLessThanOrEqualTo(property, value);
-				break;
-			case 7:// IN("in")
-				createCriteria.andIn(property, values);
-				break;
-			case 8:// ISNULL("is null")
-				createCriteria.andIsNull(property);
-				break;
-
-			case 9:// ISNOTNULL("is not null")
-				createCriteria.andIsNotNull(property);
-				break;
-			case 10://NOTIN(" not in")
-				createCriteria.andNotIn(property, values);
-				break;
-			default:
-				break;
-			}
-		}
+		Example example = setExample(searchFilters, _class);
 		try {
-			if(_class.newInstance() instanceof PriorityEntity){
+			if (_class.newInstance() instanceof PriorityEntity) {
 				example.orderBy("priority").asc();
 			}
 		} catch (InstantiationException e) {
@@ -300,6 +307,22 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 		}
 		example.orderBy("createDate").desc();
 		return mapper.selectByExample(example);
+	}
+
+	/**
+	 * 
+	 * @Title: getList
+	 * @Description: 获取列表
+	 * @param searchFilters
+	 * @return
+	 * @see framework.service.BaseService#getList(framework.page.SearchFilter[])
+	 */
+	public List<T> getList(SearchFilter... searchFilters) {
+		List<SearchFilter> searchFilter = new ArrayList<SearchFilter>();
+		for (SearchFilter sf : searchFilters) {
+			searchFilter.add(sf);
+		}
+		return getList(searchFilter);
 	}
 
 	/**
@@ -381,13 +404,13 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 		List<SearchFilter> sfList = new ArrayList<SearchFilter>();
 		sf.setFieldName(property);
 		sf.setValue(value);
-		if(value instanceof Collection){
+		if (value instanceof Collection) {
 			sf.setOperator(Operator.IN);
-		}else{
+		} else {
 			sf.setOperator(Operator.EQ);
 		}
 		sfList.add(sf);
-		
+
 		return getList(sfList);
 	}
 
@@ -429,5 +452,65 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 		Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
 
 		return (Class) params[0];
+	}
+
+	/**
+	 * 
+	 * @Title: setExample
+	 * @Description: 设置
+	 * @param searchFilters
+	 * @return
+	 * @return: Example
+	 */
+	private Example setExample(List<SearchFilter> searchFilters, Class _class) {
+		Example example = new Example(_class);
+		Criteria createCriteria = example.createCriteria();
+		for (SearchFilter searchFilter : searchFilters) {
+			String property = searchFilter.getFieldName();
+			Object value = searchFilter.getValue();
+			Operator operator = searchFilter.getOperator();
+			Boolean ignoreCase = searchFilter.getIgnoreCase();
+			List values = searchFilter.getValues();
+			switch (operator.ordinal()) {
+			case 0:// EQ
+				createCriteria.andEqualTo(property, value);
+				break;
+			case 1:// LIKE
+				createCriteria.andLike(property, (String) value);
+				break;
+			case 2:// GT>
+				createCriteria.andGreaterThan(property, value);
+				break;
+			case 3:// LT("<")
+				createCriteria.andLessThan(property, value);
+				break;
+			case 4:// NE("<>")
+				createCriteria.andNotEqualTo(property, value);
+				break;
+			case 5:// GE(">=")
+				createCriteria.andGreaterThanOrEqualTo(property, value);
+				break;
+			case 6:// LE("<=")
+				createCriteria.andLessThanOrEqualTo(property, value);
+				break;
+			case 7:// IN("in")
+				createCriteria.andIn(property, values);
+				break;
+			case 8:// ISNULL("is null")
+				createCriteria.andIsNull(property);
+				break;
+
+			case 9:// ISNOTNULL("is not null")
+				createCriteria.andIsNotNull(property);
+				break;
+			case 11:// NOTIN("not in")
+				createCriteria.andNotIn(property, values);
+				break;
+			default:
+				break;
+			}
+		}
+
+		return example;
 	}
 }

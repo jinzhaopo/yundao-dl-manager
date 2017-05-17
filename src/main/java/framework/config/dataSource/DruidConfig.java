@@ -1,4 +1,4 @@
-package framework.dataSource;
+package framework.config.dataSource;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;

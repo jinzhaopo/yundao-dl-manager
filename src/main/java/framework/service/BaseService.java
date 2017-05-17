@@ -88,6 +88,16 @@ public interface BaseService<T extends BaseEntity> {
 	public Integer save(T record);
 
 	/**
+	 * 
+	 * @Title: save
+	 * @Description: 新增数据
+	 * @param records
+	 * @return
+	 * @return: Integer
+	 */
+	public Integer save(List<T> records);
+
+	/**
 	 * 新增数据，使用不为null的字段，返回成功的条数
 	 * 
 	 * @param record
@@ -122,6 +132,37 @@ public interface BaseService<T extends BaseEntity> {
 	 * @return 成功的条数
 	 */
 	public Integer deleteById(Long id);
+
+	/**
+	 * 
+	 * @Title: delete
+	 * @Description: 删除
+	 * @param property
+	 * @param value
+	 * @return
+	 * @return: Integer
+	 */
+	public Integer delete(String property, Object value);
+
+	/**
+	 * 
+	 * @Title: delete
+	 * @Description: 删除
+	 * @param searchFilters
+	 * @return
+	 * @return: Integer
+	 */
+	public Integer delete(SearchFilter... searchFilters);
+
+	/**
+	 * 
+	 * @Title: delete
+	 * @Description: 删除
+	 * @param searchFilters
+	 * @return
+	 * @return: Integer
+	 */
+	public Integer delete(List<SearchFilter> searchFilters);
 
 	/**
 	 * 批量删除
@@ -189,7 +230,7 @@ public interface BaseService<T extends BaseEntity> {
 	/**
 	 * 
 	 * @Title: getList
-	 * @Description: TODO
+	 * @Description: 查询
 	 * @param searchFilters
 	 * @return
 	 * @return: List<T>
