@@ -6,22 +6,21 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.yundao.tour.mapper.RoleMapper;
-import com.yundao.tour.model.link.RoleMenuLink;
-import com.yundao.tour.model.link.RoleOperateLink;
-import com.yundao.tour.model.manager.User;
-import com.yundao.tour.model.rbac.Operate;
-import com.yundao.tour.model.rbac.Role;
-import com.yundao.tour.service.OperateService;
-import com.yundao.tour.service.RoleMenuLinkService;
-import com.yundao.tour.service.RoleOperateLinkService;
-import com.yundao.tour.service.RoleService;
-import com.yundao.tour.service.UserService;
+import com.yundao.manager.entity.link.RoleMenuLink;
+import com.yundao.manager.entity.link.RoleOperateLink;
+import com.yundao.manager.entity.rbac.Operate;
+import com.yundao.manager.entity.rbac.Role;
+import com.yundao.manager.entity.rbac.User;
+import com.yundao.manager.mapper.RoleMapper;
+import com.yundao.manager.service.OperateService;
+import com.yundao.manager.service.RoleMenuLinkService;
+import com.yundao.manager.service.RoleOperateLinkService;
+import com.yundao.manager.service.RoleService;
+import com.yundao.manager.service.UserService;
 
 import framework.page.SearchFilter;
 import framework.page.SearchFilter.Operator;
 import framework.service.impl.BaseServiceImpl;
-import framework.util.PropertiesHelper;
 
 /**
  * 

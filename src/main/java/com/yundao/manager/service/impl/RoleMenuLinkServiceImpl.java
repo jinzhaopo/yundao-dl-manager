@@ -3,9 +3,9 @@ package com.yundao.manager.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.yundao.tour.mapper.RoleMenuLinkMapper;
-import com.yundao.tour.model.link.RoleMenuLink;
-import com.yundao.tour.service.RoleMenuLinkService;
+import com.yundao.manager.entity.link.RoleMenuLink;
+import com.yundao.manager.mapper.RoleMenuLinkMapper;
+import com.yundao.manager.service.RoleMenuLinkService;
 
 import framework.service.impl.BaseServiceImpl;
 

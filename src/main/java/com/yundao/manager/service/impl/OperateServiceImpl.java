@@ -16,21 +16,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import com.yundao.tour.Constant;
-import com.yundao.tour.mapper.OperateMapper;
-import com.yundao.tour.model.link.RoleMenuLink;
-import com.yundao.tour.model.link.RoleOperateLink;
-import com.yundao.tour.model.rbac.Operate;
-import com.yundao.tour.model.rbac.Role;
-import com.yundao.tour.service.MenuService;
-import com.yundao.tour.service.OperateService;
-import com.yundao.tour.service.RoleOperateLinkService;
-import com.yundao.tour.service.RoleService;
+import com.yundao.manager.Constant;
+import com.yundao.manager.entity.link.RoleOperateLink;
+import com.yundao.manager.entity.rbac.Operate;
+import com.yundao.manager.entity.rbac.Role;
+import com.yundao.manager.mapper.OperateMapper;
+import com.yundao.manager.service.MenuService;
+import com.yundao.manager.service.OperateService;
+import com.yundao.manager.service.RoleOperateLinkService;
+import com.yundao.manager.service.RoleService;
 
 import framework.page.SearchFilter;
 import framework.page.SearchFilter.Operator;
 import framework.service.impl.BaseServiceImpl;
-import framework.util.AppContext;
+import framework.util.ApplicationContext;
 import framework.util.PropertiesHelper;
 import net.sf.json.JSONObject;
 import tk.mybatis.mapper.entity.Example;
@@ -151,14 +150,14 @@ public class OperateServiceImpl extends BaseServiceImpl<Operate> implements Oper
 	 */
 	public Operate getBestFitOperate(String url) {
 		// 如果url中包含了工程路径
-		String contextPath = AppContext.getContextPath();
+		String contextPath = ApplicationContext.getContextPath();
 		if (!"".equals(contextPath) && url.indexOf(contextPath) != -1) {
 			url = url.substring(contextPath.length());
 		}
 
 		// 如果url中包含"/"，则表明是整路径
 		if (url.indexOf("/") == -1) {
-			String path = AppContext.getRequest().getRequestURI().substring(contextPath.length() + 1);
+			String path = ApplicationContext.getRequest().getRequestURI().substring(contextPath.length() + 1);
 			path = StringUtils.substringBeforeLast(path, "/");
 			url = path + "/" + url;
 		}
@@ -190,7 +189,7 @@ public class OperateServiceImpl extends BaseServiceImpl<Operate> implements Oper
 	 */
 	@SuppressWarnings("unchecked")
 	private List<Operate> getAllOperates() {
-		ServletContext servletContext = AppContext.getServletContext();
+		ServletContext servletContext = ApplicationContext.getContext();
 		List<Operate> operates = (List<Operate>) servletContext.getAttribute(APPLICATION_OPERATES);
 		if (operates == null || operates.size() == 0) {
 			operates = getOperatesWidthCondition(null, null);
