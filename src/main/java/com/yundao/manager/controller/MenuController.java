@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.gaiya.ceo.Constant;
-import com.gaiya.ceo.model.enumModel.MenuType;
-import com.gaiya.ceo.model.manager.User;
-import com.gaiya.ceo.model.rbac.Menu;
-import com.gaiya.ceo.model.rbac.Operate;
-import com.gaiya.ceo.service.MenuService;
-import com.gaiya.ceo.service.OperateService;
-import com.gaiya.ceo.service.RoleMenuLinkService;
+import com.yundao.manager.Constant;
+import com.yundao.manager.entity.enumModel.MenuType;
+import com.yundao.manager.entity.rbac.Menu;
+import com.yundao.manager.entity.rbac.Operate;
+import com.yundao.manager.entity.rbac.User;
+import com.yundao.manager.service.MenuService;
+import com.yundao.manager.service.OperateService;
+import com.yundao.manager.service.RoleMenuLinkService;
 
 import framework.bean.FileWrap;
-import framework.util.AppContext;
+import framework.util.ApplicationContext;
 import framework.util.PropertiesHelper;
 import framework.util.RequestUtils;
 import framework.util.ResponseUtils;
@@ -367,7 +367,7 @@ public class MenuController extends BaseController {
 	@RequestMapping(value = "/getIcons", method = RequestMethod.POST)
 	@ResponseBody
 	public JSONArray getIcons() {
-		String real_path = AppContext.getAppRealPath(ICON_PATH);
+		String real_path =  ApplicationContext.getAppRealPath(ICON_PATH);
 		File dir = new File(real_path);
 		List<FileWrap> fileWrapList = new FileWrap(dir).getChild();
 		JSONArray arrayJson = new JSONArray();
@@ -383,7 +383,7 @@ public class MenuController extends BaseController {
 		if (properties != null && properties.size() > 0) {
 			for (Object key : properties.keySet()) {
 				String value = (String) properties.get(key);
-				arrayJson.add(AppContext.getAppRealPath(value));
+				arrayJson.add(ApplicationContext.getAppRealPath(value));
 			}
 		}
 		return arrayJson;

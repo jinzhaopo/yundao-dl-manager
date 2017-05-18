@@ -15,19 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.gaiya.ceo.model.manager.User;
-import com.gaiya.ceo.model.rbac.Role;
-import com.gaiya.ceo.service.RoleService;
-import com.gaiya.ceo.service.UserService;
+import com.yundao.manager.entity.rbac.Role;
+import com.yundao.manager.entity.rbac.User;
+import com.yundao.manager.service.RoleService;
+import com.yundao.manager.service.UserService;
 
-import framework.mvc.Message;
-import framework.mvc.WebErrors;
+import framework.page.Message;
 import framework.page.Pager;
+import framework.page.WebErrors;
 import framework.util.JsonDataGridHelper;
 import framework.util.RequestUtils;
 import framework.util.ResponseUtils;
 import framework.util.Servlets;
-import framework.validations.annotation.Validations;
 
 /**
  * 

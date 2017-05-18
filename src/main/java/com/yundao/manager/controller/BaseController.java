@@ -10,14 +10,14 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.gaiya.ceo.Constant;
-import com.gaiya.ceo.model.manager.User;
+import com.yundao.manager.Constant;
+import com.yundao.manager.entity.rbac.User;
 
 import framework.freemarker.directive.FlashMessageDirective;
-import framework.mvc.Message;
-import framework.mvc.WebErrors;
-import framework.spring.SpringUtils;
-import framework.util.AppContext;
+import framework.page.Message;
+import framework.page.WebErrors;
+import framework.util.ApplicationContext;
+import framework.util.SpringUtils;
 
 public class BaseController {
 
@@ -102,7 +102,7 @@ public class BaseController {
 	}
 
 	protected void addActionError(String message) {
-		HttpServletRequest request = AppContext.getRequest();
+		HttpServletRequest request = ApplicationContext.getRequest();
 		WebErrors errors = (WebErrors) request.getAttribute("WebErrors");
 		if (errors == null) {
 			errors = WebErrors.create();
@@ -112,13 +112,13 @@ public class BaseController {
 	}
 
 	protected WebErrors getErrors() {
-		HttpServletRequest request = AppContext.getRequest();
+		HttpServletRequest request = ApplicationContext.getRequest();
 		WebErrors errors = (WebErrors) request.getAttribute("WebErrors");
 		return errors;
 	}
 
 	protected void addActionError(String code, Object[] objects) {
-		HttpServletRequest request = AppContext.getRequest();
+		HttpServletRequest request = ApplicationContext.getRequest();
 		WebErrors errors = (WebErrors) request.getAttribute("WebErrors");
 		if (errors == null) {
 			errors = WebErrors.create();
@@ -135,7 +135,7 @@ public class BaseController {
 	 * @return: User
 	 */
 	public User getCurrentUser() {
-		return (User) AppContext.getSessionAttr(Constant.CURRENT_ADMIN);
+		return (User) ApplicationContext.getSessionAttr(Constant.CURRENT_ADMIN);
 	}
 
 }

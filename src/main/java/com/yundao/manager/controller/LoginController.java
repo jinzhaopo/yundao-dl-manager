@@ -18,19 +18,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.gaiya.ceo.Constant;
-import com.gaiya.ceo.model.manager.User;
-import com.gaiya.ceo.service.MenuService;
-import com.gaiya.ceo.service.MyCaptchaService;
-import com.gaiya.ceo.service.RSAService;
-import com.gaiya.ceo.service.UserService;
+import com.yundao.manager.Constant;
+import com.yundao.manager.entity.rbac.User;
+import com.yundao.manager.service.MenuService;
+import com.yundao.manager.service.MyCaptchaService;
+import com.yundao.manager.service.RSAService;
+import com.yundao.manager.service.UserService;
 
-import framework.mvc.Message;
+import framework.page.Message;
 import framework.page.Order;
 import framework.page.Order.Direction;
 import framework.page.Pager;
 import framework.page.SearchFilter;
-import framework.util.AppContext;
+import framework.util.ApplicationContext;
 import framework.util.JsonDataGridHelper;
 import framework.util.RequestUtils;
 import framework.util.Servlets;
@@ -149,7 +149,7 @@ public class LoginController extends BaseController {
 	 */
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logOut(Model model, HttpServletRequest request) {
-		AppContext.removeAttribute(Constant.CURRENT_ADMIN);
+		ApplicationContext.removeAttribute(Constant.CURRENT_ADMIN);
 		return login(model, request);
 	}
 

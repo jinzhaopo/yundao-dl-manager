@@ -20,8 +20,8 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.gaiya.ceo.service.MyCaptchaService;
-import com.gaiya.ceo.service.RSAService;
+import com.yundao.manager.service.MyCaptchaService;
+import com.yundao.manager.service.RSAService;
 
 import net.sf.json.JSONObject;
 

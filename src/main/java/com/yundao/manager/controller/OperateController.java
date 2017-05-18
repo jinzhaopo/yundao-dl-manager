@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.gaiya.ceo.model.manager.User;
-import com.gaiya.ceo.model.rbac.Menu;
-import com.gaiya.ceo.model.rbac.Operate;
-import com.gaiya.ceo.service.MenuService;
-import com.gaiya.ceo.service.OperateService;
+import com.yundao.manager.entity.rbac.Menu;
+import com.yundao.manager.entity.rbac.Operate;
+import com.yundao.manager.entity.rbac.User;
+import com.yundao.manager.service.MenuService;
+import com.yundao.manager.service.OperateService;
 
-import framework.mvc.Message;
+import framework.page.Message;
 import framework.util.RequestUtils;
 import framework.util.ResponseUtils;
 import framework.validations.annotation.RequiredFieldValidator;

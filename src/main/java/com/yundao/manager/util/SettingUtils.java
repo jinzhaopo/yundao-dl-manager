@@ -17,6 +17,7 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.springframework.core.io.ClassPathResource;
 
+import com.yundao.manager.Constant;
 import com.yundao.manager.Setting;
 
 import framework.util.MyConvertUtils;
@@ -132,7 +133,7 @@ public class SettingUtils {
 	static {
 		MyConvertUtils myConvertUtils = new MyConvertUtils();
 		DateConverter dateconverter = new DateConverter();
-		dateconverter.setPatterns(CommonAttributes.DATE_PATTERNS);
+		dateconverter.setPatterns(Constant.DATE_PATTERNS);
 		myConvertUtils.register(dateconverter, Date.class);
 		beanUtilsBean = new BeanUtilsBean(myConvertUtils);
 	}

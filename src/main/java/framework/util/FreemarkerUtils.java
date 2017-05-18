@@ -17,8 +17,8 @@ import org.apache.commons.beanutils.converters.DateConverter;
 import org.springframework.util.Assert;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
-import framework.CommonAttributes;
-import framework.spring.SpringUtils;
+import com.yundao.manager.Constant;
+
 import freemarker.core.Environment;
 import freemarker.template.Configuration;
 import freemarker.template.ObjectWrapper;
@@ -45,7 +45,7 @@ public class FreemarkerUtils {
 	static  {
 		convertUtilsBean = new MyConvertUtils();
 		DateConverter dateconverter = new DateConverter();
-		dateconverter.setPatterns(CommonAttributes.DATE_PATTERNS);
+		dateconverter.setPatterns(Constant.DATE_PATTERNS);
 		convertUtilsBean.register(dateconverter, Date.class);
 	}
 	

@@ -9,10 +9,6 @@ import java.util.Map;
 
 import org.apache.commons.beanutils.PropertyUtils;
 
-import com.gaiya.ceo.model.enumModel.SexType;
-
-import framework.spring.SpringUtils;
-
 /**
  * 
  * @ClassName: EnumUtils
@@ -171,7 +167,8 @@ public class EnumUtils {
 			Enum[] enums = clz.getEnumConstants();
 			Map<String, String> rels = new HashMap<String, String>();
 			for (Enum en : enums) {
-				rels.put((String) PropertyUtils.getProperty(en, keyProp), (String) PropertyUtils.getProperty(en, valueProp));
+				rels.put((String) PropertyUtils.getProperty(en, keyProp),
+						(String) PropertyUtils.getProperty(en, valueProp));
 			}
 			return rels;
 		} catch (IllegalAccessException e) {
@@ -208,11 +205,6 @@ public class EnumUtils {
 	}
 
 	public static void main(String[] args) {
-		Map<String, String> enumProp2NameMap = enumProp2NameMap(SexType.class, "name");
-		for (Iterator<String> it = enumProp2NameMap.keySet().iterator(); it.hasNext();) {
-			String key = it.next();
-			System.out.println("key:" + key + "," + "value:" + enumProp2NameMap.get(key));
-		}
 	}
 
 }

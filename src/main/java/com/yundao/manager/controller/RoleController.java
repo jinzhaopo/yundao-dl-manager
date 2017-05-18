@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.gaiya.ceo.model.rbac.Menu;
-import com.gaiya.ceo.model.rbac.Operate;
-import com.gaiya.ceo.model.rbac.Role;
-import com.gaiya.ceo.service.MenuService;
-import com.gaiya.ceo.service.OperateService;
-import com.gaiya.ceo.service.RoleService;
+import com.yundao.manager.entity.rbac.Menu;
+import com.yundao.manager.entity.rbac.Operate;
+import com.yundao.manager.entity.rbac.Role;
+import com.yundao.manager.service.MenuService;
+import com.yundao.manager.service.OperateService;
+import com.yundao.manager.service.RoleService;
 
 import framework.page.Pager;
 import framework.page.SearchFilter;

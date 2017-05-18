@@ -1,5 +1,9 @@
 package framework.util;
 
+import static com.yundao.manager.Constant.JSESSION_COOKIE;
+import static com.yundao.manager.Constant.POST;
+import static com.yundao.manager.Constant.UTF8;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.Enumeration;
@@ -14,12 +18,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.util.UrlPathHelper;
-
-import static com.gaiya.ceo.Constant.JSESSION_COOKIE;
-
-import static com.gaiya.ceo.Constant.UTF8;
-
-import static com.gaiya.ceo.Constant.POST;
 
 /**
  * 

@@ -13,8 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.Validate;
-
-import com.google.common.net.HttpHeaders;
+import org.springframework.http.HttpHeaders;
 
 /**
  * 

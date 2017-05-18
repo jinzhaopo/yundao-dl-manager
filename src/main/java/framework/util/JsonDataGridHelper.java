@@ -1,6 +1,5 @@
 package framework.util;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +15,6 @@ import org.apache.ibatis.ognl.OgnlException;
 import org.baisha.util.DateHelper;
 
 import framework.page.Pager;
-import framework.spring.SpringUtils;
 
 /**
  * 
@@ -45,7 +43,7 @@ public class JsonDataGridHelper {
 	 */
 	public static List<Object> createJSONData(List dataList) {
 		List<Object> list = new ArrayList<Object>();
-		HttpServletRequest request = AppContext.getRequest();
+		HttpServletRequest request = ApplicationContext.getRequest();
 		String filedStr = request.getParameter("field");
 		if (StringUtils.isEmpty(filedStr)) {
 			return null;
